@@ -1,5 +1,7 @@
 <template>
-    <b-button><slot>Base</slot></b-button>
+    <b-button v-on="$listeners" v-bind="$attrs">
+        <slot>Base</slot>
+    </b-button>
 </template>
 <script>
     export default {
