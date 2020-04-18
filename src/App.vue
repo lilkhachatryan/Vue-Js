@@ -1,21 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <base-button size="sm">Other name</base-button> <br />
-    <base-input @focus="handleFocus"/>
-    <ul>
-      <base-nav-bar-routes :routes="routes"></base-nav-bar-routes>
-      <router-view></router-view>
-    </ul>
+    <Editable />
   </div>
 </template>
 
 <script>
-// import { eventBus } from './main';
+import Editable from "./components/Editable";
 
 export default {
   name: 'App',
   components: {
+    Editable
   },
   computed: {
     routes () {
