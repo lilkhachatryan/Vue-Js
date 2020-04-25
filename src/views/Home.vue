@@ -1,13 +1,25 @@
 <template>
   <div>
     <div v-custom-on:click="handleClick">Home component</div>
+    <base-button size="sm" @click="$router.push({name: 'login'})">Logout</base-button>
+    <hr />
     <input v-focus>
+    <hr />
+    <base-input @focus="handleFocus"/>
+    <hr />
+    <base-button size="sm" @click="load = !load">Animate progress bar</base-button>
+    <hr />
+    <progress-bar :load="load"></progress-bar>
   </div>
 </template>
 
 <script>
+  import ProgressBar from "../components/shared/ProgressBar";
 export default {
   name: 'HomeComponent',
+  components: {
+    ProgressBar
+  },
   directives: {
     customOn: {
       // eslint-disable-next-line no-unused-vars
@@ -26,9 +38,15 @@ export default {
       }
     }
   },
+  data: () => ({
+    load: true
+  }),
   methods: {
     handleClick (e) {
       console.log('e', e);
+    },
+    handleFocus: function (event) {
+      console.log(event);
     }
   }
 }

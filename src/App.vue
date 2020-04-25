@@ -1,12 +1,9 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <base-button size="sm">Other name</base-button> <br />
-    <base-input @focus="handleFocus"/>
     <ul>
       <base-nav-bar-routes :routes="routes"></base-nav-bar-routes>
-      <router-view></router-view>
     </ul>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -19,32 +16,45 @@ export default {
   },
   computed: {
     routes () {
-      return [{
-        path: '/home',
-        name: 'home',
-        title: 'home',
-      }, {
-        path: 'dashboard',
-        name: 'dashboard',
-        title: 'dashboard',
-      }];
+      return [
+        {
+          path: '/home',
+          name: 'home',
+          title: 'home',
+        },
+        {
+          path: 'dashboard',
+          name: 'dashboard',
+          title: 'dashboard',
+        },
+        {
+          path: 'login',
+          name: 'login',
+          title: 'login',
+        }
+      ];
     }
   },
   methods: {
-    handleFocus: function (event) {
-      console.log(event);
-    }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  ul {
+    height: 70px;
+    margin-bottom: 1vh;
+    display: flex;
+    list-style: none;
+    li {
+      margin: auto 20px;
+    }
+  }
 }
 </style>
