@@ -1,5 +1,8 @@
 <template>
-  <div>Dashboard component</div>
+  <div>
+    <div>Dashboard component</div>
+    <base-button @click="$router.push({ name: 'home', hash: '#data'})">To Home</base-button>
+  </div>
 </template>
 
 <script>

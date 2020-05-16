@@ -3,13 +3,17 @@
     <div v-custom-on:click="handleClick">Home component</div>
     <base-button size="sm" @click="$router.push({name: 'login'})">Logout</base-button>
     <hr />
-    <input v-focus>
+    <input v-focus />
     <hr />
     <base-input @focus="handleFocus"/>
+    <hr />
+    <div style="height: 700px"></div>
+    <div id="data"></div>
     <hr />
     <base-button size="sm" @click="load = !load">Animate progress bar</base-button>
     <hr />
     <progress-bar :load="load"></progress-bar>
+    <hr />
   </div>
 </template>
 
